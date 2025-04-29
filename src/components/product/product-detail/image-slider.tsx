@@ -23,10 +23,14 @@ const ImageSlider:React.FC<IProps> = ({images}) =>{
         <div className="w-[400px] h-[400px] ">
       <Slider className="w-[400px] h-[400px] " {...settings}>
         {images.map((image,index) => {
+
+          const fixedImageUrl = image.replace(/\\/g, '/');
+          const imageSrc = fixedImageUrl ? `${process.env.NEXT_PUBLIC_API_BASE_URL} ${fixedImageUrl}`:'/product/product.webp';
+
             return(
                 <div className='w-[400px] h-[400px] rounded-md overflow-hidden shadow' key={index}>
                     <Image
-                    src={`${process.env.NEXT_PUBLIC_API_BASE_URL}/${image}`}
+                    src={imageSrc}
                     width={1000}
                     height={1000}
                     alt={'product detail image'}

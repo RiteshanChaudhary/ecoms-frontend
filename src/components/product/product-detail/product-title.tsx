@@ -15,7 +15,7 @@ const ProductTitle:React.FC<IProp> = ({name,rating}) =>{
             <div className='flex items-center gap-10 mt-4'>
             <p className='tracking-wider  font-bold text-3xl'>{name}</p>
             <div className='flex gap-3 items-center font-bold'>
-                <RatingStar rating={Math.ceil(rating)} onChange={function (_: any, value: any): void {
+                <RatingStar rating={Math.ceil(rating)} onChange={function (_: any ): void {
                     throw new Error('Function not implemented.');
                 } }/>
                 <p className='tracking-wider text-sm text-gray-500'>({rating})</p>
